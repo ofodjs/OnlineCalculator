@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ApiService {
-  private API_URL = 'http://localhost:49837/api';
+  private API_URL = 'http://localhost:4201/api';
 
   constructor(private http: HttpClient) {}
 
