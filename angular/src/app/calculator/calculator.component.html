@@ -1,0 +1,13 @@
+<div class="calc-numpad">
+	<input [(ngModel)]="operand1">
+	<select [(ngModel)]="selectedOperation">
+		<option *ngFor="let operation of mathOperations"
+		 	[value]="operation">{{operation}}</option>
+	</select>
+	<input [(ngModel)]="operand2">
+	<button (click)="recalculate()">Calculate</button>
+</div>
+<div *ngIf="operationResult">
+	<p *ngIf="operationResult.isOk">{{operationResult.value}}</p>
+	<p *ngIf="!operationResult.isOk">{{operationResult.errorMessage}}</p>
+</div>
