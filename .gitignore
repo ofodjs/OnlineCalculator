@@ -1,0 +1,16 @@
+obj
+bin
+*.suo
+*.user
+*.log
+packages
+TestResults
+/Source/TestData
+/Source/*.DotSettings
+/Markup/node_modules
+/Angular/coverage
+/Angular/app-dev-env.json
+/Source/Drawback.Web/App_Data/Drawback.Web.xml
+/Source/.vs/config/applicationhost.config
+.vs
+*.DotSettings
