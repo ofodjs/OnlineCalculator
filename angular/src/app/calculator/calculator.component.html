@@ -1,32 +1,57 @@
-<form (ngSubmit)="recalculate()" #calcForm="ngForm">
+<form (ngSubmit)="recalculate()" #calcForm="ngForm"
+	id="calc-form">
 
+<div align="center" class="container">
+
+<div class="row">
+<div class="col-md-3 offset-md-2">
 	<input [(ngModel)]="model.operand1" #operand1="ngModel"
 		id="operand1" name="operand1" autocomplete="off"
-		class="form-control" required>
+		class="form-control" required pattern="\d+(\.\d+)?">
 	<div [hidden]="operand1.valid || operand1.pristine"
-	     class="alert alert-danger">
+	     class="error-message">
 	  Field should have numeric format
 	</div>	
+</div>
 		
+<div class="col-md-2">
 	<select [(ngModel)]="model.mathOperation" #mathOperation="ngModel"
-		id="mathOperation" name="mathOperation">
+		id="mathOperation" name="mathOperation"
+		class="form-control">
 		<option *ngFor="let operation of mathOperations"
 		 	[value]="operation">{{operation}}</option>
 	</select>
+</div>
 		
+<div class="col-md-3">		
 	<input [(ngModel)]="model.operand2" #operand2="ngModel"
 		id="operand2" name="operand2" autocomplete="off"
-		class="form-control" required>
+		class="form-control" required pattern="\d+(\.\d+)?">
 	<div [hidden]="operand2.valid || operand2.pristine"
-	     class="alert alert-danger">
+	     class="error-message">
 	  Field should have numeric format
 	</div>	
+</div>
 		
-	<button type="submit" [disabled]="!calcForm.form.valid">Calculate</button>
+<div class="col-md-2">		
+	<button type="submit" class="form-control btn-default"
+		[disabled]="!calcForm.form.valid">Calculate</button>
+</div>
+</div>
+
+<div class="row">
+
+<div class="col-md-5" align="right">
+Result:
+</div>
+
+<div class="col-md-7" align="left" *ngIf="operationResult">
+	<span *ngIf="operationResult.isOk">{{operationResult.value}}</span>
+	<span *ngIf="!operationResult.isOk">{{operationResult.errorMessage}}</span>
+</div>
+
+</div>
+
+</div>
 
 </form>
-
-<div *ngIf="operationResult">
-	<p *ngIf="operationResult.isOk">{{operationResult.value}}</p>
-	<p *ngIf="!operationResult.isOk">{{operationResult.errorMessage}}</p>
-</div>

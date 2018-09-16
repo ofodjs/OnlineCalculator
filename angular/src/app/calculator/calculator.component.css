@@ -1,0 +1,21 @@
+#calc-form .row div
+{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#calc-form .row
+{
+	min-height: 70px;
+}
+
+.error-message
+{
+	color: #ff0000;
+	font-size: 14px;
+}
+
+form.ng-valid button[type="submit"]
+{
+	cursor: pointer;
+}
