@@ -46,7 +46,7 @@ Result:
 </div>
 
 <div class="col-md-7" align="left" *ngIf="operationResult">
-	<span *ngIf="operationResult.isOk">{{operationResult.value}}</span>
+	<span *ngIf="operationResult.isOk" class="font-weight-bold">{{operationResult.value}}</span>
 	<span *ngIf="!operationResult.isOk">{{operationResult.errorMessage}}</span>
 </div>
 
