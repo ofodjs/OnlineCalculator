@@ -1,0 +1,11 @@
+.app-container
+{
+	margin-top: 10px;
+}
+
+div.app-container .card
+{
+	border-color: #444444;
+	border-radius: 10px;
+	box-shadow: 5px 5px 0 #000000;
+}

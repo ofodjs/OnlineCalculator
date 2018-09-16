@@ -4,7 +4,7 @@
 <div align="center" class="container">
 
 <div class="row">
-<div class="col-md-3 offset-md-2">
+<div class="col-md-3 offset-md-1">
 	<input [(ngModel)]="model.operand1" #operand1="ngModel"
 		id="operand1" name="operand1" autocomplete="off"
 		class="form-control" required pattern="\d+(\.\d+)?">
@@ -41,11 +41,11 @@
 
 <div class="row">
 
-<div class="col-md-5" align="right">
-Result:
+<div class="col-md-4" align="right">
+	Result:
 </div>
 
-<div class="col-md-7" align="left" *ngIf="operationResult">
+<div class="col-md-8" align="left" *ngIf="operationResult">
 	<span *ngIf="operationResult.isOk" class="font-weight-bold">{{operationResult.value}}</span>
 	<span *ngIf="!operationResult.isOk">{{operationResult.errorMessage}}</span>
 </div>
