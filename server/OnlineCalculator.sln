@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCalculator.Web", "Onl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCalculator.Domain", "OnlineCalculator.Domain\OnlineCalculator.Domain.csproj", "{65DD2797-DA3A-4C01-BA09-1FD351C68796}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCalculator.Domain.Tests", "OnlineCalculator.Domain.Tests\OnlineCalculator.Domain.Tests.csproj", "{63D48BC0-7AF7-4DCF-9D19-B150A0B99F0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F18A93C2-4DDA-41E4-BE24-D51757DA7A46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{65DD2797-DA3A-4C01-BA09-1FD351C68796}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65DD2797-DA3A-4C01-BA09-1FD351C68796}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65DD2797-DA3A-4C01-BA09-1FD351C68796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D48BC0-7AF7-4DCF-9D19-B150A0B99F0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D48BC0-7AF7-4DCF-9D19-B150A0B99F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D48BC0-7AF7-4DCF-9D19-B150A0B99F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D48BC0-7AF7-4DCF-9D19-B150A0B99F0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63D48BC0-7AF7-4DCF-9D19-B150A0B99F0E} = {F18A93C2-4DDA-41E4-BE24-D51757DA7A46}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFBF3E35-E9C3-44FB-8B08-BF577AD60E71}
