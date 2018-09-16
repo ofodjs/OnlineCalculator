@@ -1,4 +1,5 @@
-﻿using OnlineCalculator.Domain.Models;
+﻿using OnlineCalculator.Domain.Common;
+using OnlineCalculator.Domain.Models;
 using OnlineCalculator.Domain.Providers;
 using System;
 
@@ -27,12 +28,17 @@ namespace OnlineCalculator.Domain.Services
                 return new OperationResult($"Operation '{operation}' is not supported");
             }
 
+            if (operation == MathOperations.Divide && data.Operand2 == 0)
+            {
+                return new OperationResult("Attempt to divide by zero");
+            }
+
             try
             {
                 var value = mathExpression(data.Operand1, data.Operand2);
                 return new OperationResult(value);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return new OperationResult($"Error executing '{operation}' operation between {data.Operand1} and {data.Operand2}");
             }
