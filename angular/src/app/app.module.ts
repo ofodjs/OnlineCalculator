@@ -6,7 +6,6 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {CalculatorComponent} from './calculator/calculator.component';
-import { OperandComponent } from './operand/operand.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'calculator', pathMatch: 'full'},
@@ -19,8 +18,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CalculatorComponent,
-    OperandComponent
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
@@ -31,4 +29,4 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {} 
+export class AppModule {}
