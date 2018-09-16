@@ -1,11 +1,11 @@
 <form (ngSubmit)="recalculate()" #calcForm="ngForm">
 
 	<input [(ngModel)]="model.operand1" #operand1="ngModel"
-		id="operand1" name="operand1"
+		id="operand1" name="operand1" autocomplete="off"
 		class="form-control" required>
 	<div [hidden]="operand1.valid || operand1.pristine"
 	     class="alert alert-danger">
-	  Operand1 is required
+	  Field should have numeric format
 	</div>	
 		
 	<select [(ngModel)]="model.mathOperation" #mathOperation="ngModel"
@@ -15,11 +15,11 @@
 	</select>
 		
 	<input [(ngModel)]="model.operand2" #operand2="ngModel"
-		id="operand2" name="operand2"
+		id="operand2" name="operand2" autocomplete="off"
 		class="form-control" required>
 	<div [hidden]="operand2.valid || operand2.pristine"
 	     class="alert alert-danger">
-	  Operand2 is required
+	  Field should have numeric format
 	</div>	
 		
 	<button type="submit" [disabled]="!calcForm.form.valid">Calculate</button>
