@@ -8,3 +8,25 @@ Backend side uses WebApi2, Autofac as IoC container. Server code has unit tests 
 Both sides uses input data validation.
 
 API on backend uses port 4201. Angular project uses default port 4200.
+
+# How to run?
+
+1. Running Angular
+   - Install Node.js
+   - Install all packages used in this project by running next command in folder 'angular':
+   ```
+   npm i
+   ```
+   - Now you could run development server by command:
+   ```
+   ng s -o
+   ```
+   The option '-o' means that default browser should be opened with our project 'http://localhost:4200'.
+   
+2. Runnig backend
+   - Download Visual Studio to work with project. Recommended Visual Studio Community 2017.
+   - Open solution file [server/OnlineCalculator.sln](server/OnlineCalculator.sln) in Visual Studio.
+   - Run project on IIS Express by clicking on corresponding button on toolbar.
+   - Ignore opened window with address 'http://localhost:4201'. Use previously opened 'http://localhost:4200' instead.
+
+3. Now address 'http://localhost:4200' should be used to work with Online Calculator.
