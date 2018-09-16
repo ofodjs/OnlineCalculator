@@ -1,12 +1,31 @@
-<div class="calc-numpad">
-	<input [(ngModel)]="operand1">
-	<select [(ngModel)]="selectedOperation">
+<form (ngSubmit)="recalculate()" #calcForm="ngForm">
+
+	<input [(ngModel)]="model.operand1" #operand1="ngModel"
+		id="operand1" name="operand1"
+		class="form-control" required>
+	<div [hidden]="operand1.valid || operand1.pristine"
+	     class="alert alert-danger">
+	  Operand1 is required
+	</div>	
+		
+	<select [(ngModel)]="model.mathOperation" #mathOperation="ngModel"
+		id="mathOperation" name="mathOperation">
 		<option *ngFor="let operation of mathOperations"
 		 	[value]="operation">{{operation}}</option>
 	</select>
-	<input [(ngModel)]="operand2">
-	<button (click)="recalculate()">Calculate</button>
-</div>
+		
+	<input [(ngModel)]="model.operand2" #operand2="ngModel"
+		id="operand2" name="operand2"
+		class="form-control" required>
+	<div [hidden]="operand2.valid || operand2.pristine"
+	     class="alert alert-danger">
+	  Operand2 is required
+	</div>	
+		
+	<button type="submit" [disabled]="!calcForm.form.valid">Calculate</button>
+
+</form>
+
 <div *ngIf="operationResult">
 	<p *ngIf="operationResult.isOk">{{operationResult.value}}</p>
 	<p *ngIf="!operationResult.isOk">{{operationResult.errorMessage}}</p>
