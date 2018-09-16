@@ -26,6 +26,7 @@ API on backend uses port 4201. Angular project uses default port 4200.
 2. Runnig backend
    - Download Visual Studio to work with project. Recommended Visual Studio Community 2017.
    - Open solution file [server/OnlineCalculator.sln](server/OnlineCalculator.sln) in Visual Studio.
+   - Build solution.
    - Run project on IIS Express by clicking on corresponding button on toolbar.
    - Ignore opened window with address 'http://localhost:4201'. Use previously opened 'http://localhost:4200' instead.
 
