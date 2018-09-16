@@ -1,5 +1,4 @@
-﻿using OnlineCalculator.Domain.Common;
-using OnlineCalculator.Domain.Models;
+﻿using OnlineCalculator.Domain.Models;
 using OnlineCalculator.Domain.Providers;
 using System;
 
@@ -14,9 +13,10 @@ namespace OnlineCalculator.Domain.Services
             _mathExpressionProvider = mathExpressionProvider;
         }
 
-        public OperationResult Calculate(decimal x, decimal y, MathOperations operation)
+        public OperationResult Calculate(CalculationData data)
         {
             Func<decimal, decimal, decimal> mathExpression;
+            var operation = data.MathOperation;
 
             try
             {
@@ -29,12 +29,12 @@ namespace OnlineCalculator.Domain.Services
 
             try
             {
-                var value = mathExpression(x, y);
+                var value = mathExpression(data.Operand1, data.Operand2);
                 return new OperationResult(value);
             }
             catch (Exception)
             {
-                return new OperationResult($"Error executing '{operation}' operation between {x} and {y}");
+                return new OperationResult($"Error executing '{operation}' operation between {data.Operand1} and {data.Operand2}");
             }
         }
     }

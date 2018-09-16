@@ -24,6 +24,7 @@ namespace OnlineCalculator.Web.App_Start
         {
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterAssemblyModules(typeof(Domain.AutofacModule).Assembly);
+            builder.RegisterAssemblyModules(typeof(Web.AutofacModule).Assembly);
             Container = builder.Build();
             return Container;
         }
