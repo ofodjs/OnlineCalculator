@@ -6,6 +6,8 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {CalculatorComponent} from './calculator/calculator.component';
+import {MenuComponent} from './menu/menu.component';
+import {AboutComponent} from './about/about.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'calculator', pathMatch: 'full'},
@@ -13,12 +15,18 @@ const routes: Routes = [
     path: 'calculator',
     component: CalculatorComponent
   },
+  {
+    path: 'about',
+    component: AboutComponent
+  },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    MenuComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
